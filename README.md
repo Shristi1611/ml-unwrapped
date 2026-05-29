@@ -9,7 +9,7 @@ This repository serves as a code-first exploration of machine learning algorithm
 ## Features
 
 * **Pure NumPy Architecture:** No external high-level ML frameworks; built entirely on linear algebra primitives.
-* **Vectorized Implementations:** Avoids performance-heavy loops by utilizing matrix operations (`@`).
+* **Vectorized Implementations:** Avoids performance-heavy loops by utilizing matrix operations.
 * **Real-World Benchmarking:** Every architecture is validated against standard datasets to ensure mathematical precision.
 
 ---
