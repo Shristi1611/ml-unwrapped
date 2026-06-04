@@ -19,7 +19,7 @@ No scikit-learn. No TensorFlow. No PyTorch. Just NumPy and the math.
 - **Vectorized implementations** — matrix operations throughout, no performance-heavy per-sample loops
 - **Numerically stable** — edge cases handled correctly (stable sigmoid, stable softmax, lstsq over explicit inverse)
 - **Real-world validation** — every algorithm tested against standard datasets, not toy examples
-- **Self-contained notebooks** — each `.ipynb` includes the math breakdown, implementation, and validation pipeline
+- **Self-contained files** — each `.md` includes the math breakdown, implementation, and validation pipeline
 
 ---
 
@@ -27,9 +27,9 @@ No scikit-learn. No TensorFlow. No PyTorch. Just NumPy and the math.
 
 | Day | Algorithm | Key Concept | Dataset | Accuracy |
 |-----|-----------|-------------|---------|----------|
-| 01 | [Linear Regression](LinearRegression.ipynb) | Normal Equation — closed-form exact solution | California Housing (20,640 samples) | — |
-| 02 | [Logistic Regression](LogisticRegression.ipynb) | Sigmoid + gradient descent — binary classification | Breast Cancer Wisconsin (569 samples) | 97.37% |
-| 03 | [Softmax Regression](MultiClassRegression.ipynb) | Softmax + one-hot encoding — multi-class classification | Iris (150 samples, 3 classes) | 96.67% |
+| 01 | [Linear Regression](LinearRegression.md) | Normal Equation — closed-form exact solution | California Housing (20,640 samples) | — |
+| 02 | [Logistic Regression](LogisticRegression.md) | Sigmoid + gradient descent — binary classification | Breast Cancer Wisconsin (569 samples) | 97.37% |
+| 03 | [Softmax Regression](MultiClassRegression.md) | Softmax + one-hot encoding — multi-class classification | Iris (150 samples, 3 classes) | 96.67% |
 | … | More to come | Neural Networks, SVMs, Decision Trees, and more | — | — |
 
 ---
@@ -38,10 +38,10 @@ No scikit-learn. No TensorFlow. No PyTorch. Just NumPy and the math.
 
 ```text
 Foundations/
-├── LinearRegression.ipynb       # Day 01 — Normal Equation, California Housing dataset
-├── LogisticRegression.ipynb     # Day 02 — Sigmoid, gradient descent, Breast Cancer dataset
-├── MultiClassRegression.ipynb   # Day 03 — Softmax, one-hot encoding, Iris dataset
-└── ...                          # Days 04–30 in progress
+├── LinearRegression.md       # Day 01 — Normal Equation, California Housing dataset
+├── LogisticRegression.md     # Day 02 — Sigmoid, gradient descent, Breast Cancer dataset
+├── MultiClassRegression.md   # Day 03 — Softmax, one-hot encoding, Iris dataset
+└── ...                       # Days 04–30 in progress
 ```
 
 ---
