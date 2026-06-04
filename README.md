@@ -81,6 +81,6 @@ pip install numpy jupyter scikit-learn
 
 ## Part of ML Unwrapped
 
-This repository is updated daily as part of the **ML Unwrapped** 30-day series. Follow along on [LinkedIn](#) for the breakdown behind each build.
+This repository is updated daily as part of the **ML Unwrapped** 30-day series. Follow along on [LinkedIn](https://www.linkedin.com/in/shristi-sinha-) for the breakdown behind each build.
 
 30 days. 30 algorithms. All math, no magic.
