@@ -1,5 +1,5 @@
 # Foundations
-> From-scratch implementations of machine learning algorithms — no frameworks, just matrix math and NumPy.
+> From-scratch implementations of machine learning algorithms: no frameworks, just matrix math and NumPy.
 
 This is the companion repository for **ML Unwrapped**, a 30-day series deconstructing AI architectures down to their mathematical primitives. Each notebook translates the core equations of a classic algorithm directly into clean, vectorized matrix operations.
 
@@ -7,7 +7,7 @@ This is the companion repository for **ML Unwrapped**, a 30-day series deconstru
 
 ## Philosophy
 
-Most ML tutorials teach you to call `.fit()`. This series teaches you what `.fit()` is actually doing — every gradient, every matrix operation, every assumption that high-level libraries silently make on your behalf.
+Most ML tutorials teach you to call `.fit()`. This series teaches you what `.fit()` is actually doing- every gradient, every matrix operation, every assumption that high-level libraries silently make on your behalf.
 
 No scikit-learn. No TensorFlow. No PyTorch. Just NumPy and the math.
 
@@ -15,11 +15,11 @@ No scikit-learn. No TensorFlow. No PyTorch. Just NumPy and the math.
 
 ## Features
 
-- **Pure NumPy architecture** — built entirely on linear algebra primitives, no high-level ML frameworks
-- **Vectorized implementations** — matrix operations throughout, no performance-heavy per-sample loops
-- **Numerically stable** — edge cases handled correctly (stable sigmoid, stable softmax, lstsq over explicit inverse)
-- **Real-world validation** — every algorithm tested against standard datasets, not toy examples
-- **Self-contained files** — each `.md` includes the math breakdown, implementation, and validation pipeline
+- **Pure NumPy architecture** - built entirely on linear algebra primitives, no high-level ML frameworks
+- **Vectorized implementations** - matrix operations throughout, no performance-heavy per-sample loops
+- **Numerically stable** - edge cases handled correctly (stable sigmoid, stable softmax, lstsq over explicit inverse)
+- **Real-world validation** - every algorithm tested against standard datasets, not toy examples
+- **Self-contained files** - each `.md` includes the math breakdown, implementation, and validation pipeline
 
 ---
 
@@ -27,9 +27,9 @@ No scikit-learn. No TensorFlow. No PyTorch. Just NumPy and the math.
 
 | Day | Algorithm | Key Concept | Dataset | Accuracy |
 |-----|-----------|-------------|---------|----------|
-| 01 | [Linear Regression](LinearRegression.md) | Normal Equation — closed-form exact solution | California Housing (20,640 samples) | — |
-| 02 | [Logistic Regression](LogisticRegression.md) | Sigmoid + gradient descent — binary classification | Breast Cancer Wisconsin (569 samples) | 97.37% |
-| 03 | [Softmax Regression](MultiClassRegression.md) | Softmax + one-hot encoding — multi-class classification | Iris (150 samples, 3 classes) | 96.67% |
+| 01 | [Linear Regression](LinearRegression.md) | Normal Equation : closed-form exact solution | California Housing (20,640 samples) | — |
+| 02 | [Logistic Regression](LogisticRegression.md) | Sigmoid + gradient descent : binary classification | Breast Cancer Wisconsin (569 samples) | 97.37% |
+| 03 | [Softmax Regression](MultiClassRegression.md) | Softmax + one-hot encoding : multi-class classification | Iris (150 samples, 3 classes) | 96.67% |
 | … | More to come | Neural Networks, SVMs, Decision Trees, and more | — | — |
 
 ---
@@ -38,9 +38,9 @@ No scikit-learn. No TensorFlow. No PyTorch. Just NumPy and the math.
 
 ```text
 Foundations/
-├── LinearRegression.md       # Day 01 — Normal Equation, California Housing dataset
-├── LogisticRegression.md     # Day 02 — Sigmoid, gradient descent, Breast Cancer dataset
-├── MultiClassRegression.md   # Day 03 — Softmax, one-hot encoding, Iris dataset
+├── LinearRegression.md       # Day 01 : Normal Equation, California Housing dataset
+├── LogisticRegression.md     # Day 02 : Sigmoid, gradient descent, Breast Cancer dataset
+├── MultiClassRegression.md   # Day 03 : Softmax, one-hot encoding, Iris dataset
 └── ...                       # Days 04–30 in progress
 ```
 
@@ -75,7 +75,7 @@ Generalises logistic regression to K classes. Outputs a probability distribution
 pip install numpy jupyter scikit-learn
 ```
 
-> `scikit-learn` is used only for loading standard datasets — never for model training or evaluation.
+> `scikit-learn` is used only for loading standard datasets, never for model training or evaluation.
 
 ---
 
