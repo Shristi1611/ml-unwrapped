@@ -1,21 +1,86 @@
 # Foundations
+> From-scratch implementations of machine learning algorithms — no frameworks, just matrix math and NumPy.
 
-From-scratch implementations of fundamental machine learning algorithms. Built using raw matrix operations and vectorization techniques to explore the mathematical mechanics behind modern prediction engines.
+This is the companion repository for **ML Unwrapped**, a 30-day series deconstructing AI architectures down to their mathematical primitives. Each notebook translates the core equations of a classic algorithm directly into clean, vectorized matrix operations.
 
-## Overview
+---
 
-This repository serves as a code-first exploration of machine learning algorithms built completely from first principles using NumPy. By bypassing high-level library abstractions (like scikit-learn or PyTorch), this project focuses on translating analytical equations and optimization calculus directly into clean, efficient, vectorized matrix operations within self-contained Jupyter Notebooks.
+## Philosophy
+
+Most ML tutorials teach you to call `.fit()`. This series teaches you what `.fit()` is actually doing — every gradient, every matrix operation, every assumption that high-level libraries silently make on your behalf.
+
+No scikit-learn. No TensorFlow. No PyTorch. Just NumPy and the math.
+
+---
 
 ## Features
 
-* **Pure NumPy Architecture:** No external high-level ML frameworks; built entirely on linear algebra primitives.
-* **Vectorized Implementations:** Avoids performance-heavy loops by utilizing matrix operations.
-* **Real-World Benchmarking:** Every architecture is validated against standard datasets to ensure mathematical precision.
+- **Pure NumPy architecture** — built entirely on linear algebra primitives, no high-level ML frameworks
+- **Vectorized implementations** — matrix operations throughout, no performance-heavy per-sample loops
+- **Numerically stable** — edge cases handled correctly (stable sigmoid, stable softmax, lstsq over explicit inverse)
+- **Real-world validation** — every algorithm tested against standard datasets, not toy examples
+- **Self-contained notebooks** — each `.ipynb` includes the math breakdown, implementation, and validation pipeline
+
+---
+
+## Algorithms
+
+| Day | Algorithm | Key Concept | Dataset | Accuracy |
+|-----|-----------|-------------|---------|----------|
+| 01 | [Linear Regression](LinearRegression.ipynb) | Normal Equation — closed-form exact solution | California Housing (20,640 samples) | — |
+| 02 | [Logistic Regression](LogisticRegression.ipynb) | Sigmoid + gradient descent — binary classification | Breast Cancer Wisconsin (569 samples) | 97.37% |
+| 03 | [Softmax Regression](MultiClassRegression.ipynb) | Softmax + one-hot encoding — multi-class classification | Iris (150 samples, 3 classes) | 96.67% |
+| … | More to come | Neural Networks, SVMs, Decision Trees, and more | — | — |
 
 ---
 
 ## Project Structure
 
 ```text
-├── LinearRegression.ipynb  # Self-contained class, math breakdown, and housing pipeline
-└── More to come...         # Upcoming from-scratch implementations (Classification, Neural Networks, etc.)
+Foundations/
+├── LinearRegression.ipynb       # Day 01 — Normal Equation, California Housing dataset
+├── LogisticRegression.ipynb     # Day 02 — Sigmoid, gradient descent, Breast Cancer dataset
+├── MultiClassRegression.ipynb   # Day 03 — Softmax, one-hot encoding, Iris dataset
+└── ...                          # Days 04–30 in progress
+```
+
+---
+
+## The Math at a Glance
+
+**Day 01 — Linear Regression (Normal Equation)**
+```
+β = (XᵀX)⁻¹ Xᵀy
+```
+Closed-form. No iterations. Finds the exact optimal weights in one matrix operation.
+
+**Day 02 — Logistic Regression (Gradient Descent)**
+```
+σ(z) = 1 / (1 + e⁻ᶻ)
+dw = (1/n) Xᵀ(ŷ − y)
+```
+No closed-form solution exists. Gradient descent iterates to convergence.
+
+**Day 03 — Softmax Regression (Multi-Class)**
+```
+σ(zᵢ) = eᶻⁱ / Σ eᶻʲ
+```
+Generalises logistic regression to K classes. Outputs a probability distribution that sums to 1.
+
+---
+
+## Requirements
+
+```bash
+pip install numpy jupyter scikit-learn
+```
+
+> `scikit-learn` is used only for loading standard datasets — never for model training or evaluation.
+
+---
+
+## Part of ML Unwrapped
+
+This repository is updated daily as part of the **ML Unwrapped** 30-day series. Follow along on [LinkedIn](#) for the breakdown behind each build.
+
+30 days. 30 algorithms. All math, no magic.
