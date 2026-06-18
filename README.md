@@ -27,11 +27,12 @@ No scikit-learn. No TensorFlow. No PyTorch. Just NumPy and the math.
 
 | Day | Algorithm | Key Concept | Dataset | Accuracy |
 |-----|-----------|-------------|---------|----------|
-| 01 | [Linear Regression](LinearRegression.md) | Normal Equation - closed-form exact solution | California Housing (20,640 samples) | - |
-| 02 | [Logistic Regression](LogisticRegression.md) | Sigmoid + gradient descent - binary classification | Breast Cancer Wisconsin (569 samples) | 97.37% |
-| 03 | [Softmax Regression](MultiClassRegression.md) | Softmax + one-hot encoding - multi-class classification | Iris (150 samples, 3 classes) | 96.67% |
-| 04 | [Gaussian Naive Bayes](NaiveBayes.md) | Bayes' theorem - probabilistic classification, no training loop | UCI Forensic Glass (214 samples, 6 classes) | 51.16% |
-| … | More to come | Neural Networks, SVMs, Decision Trees, and more | - | - |
+| 01 | [Linear Regression](01_LinearRegression.md) | Normal Equation - closed-form exact solution | California Housing (20,640 samples) | - |
+| 02 | [Logistic Regression](02_LogisticRegression.md) | Sigmoid + gradient descent - binary classification | Breast Cancer Wisconsin (569 samples) | 97.37% |
+| 03 | [Softmax Regression](03_MultiClassRegression.md) | Softmax + one-hot encoding - multi-class classification | Iris (150 samples, 3 classes) | 96.67% |
+| 04 | [Gaussian Naive Bayes](04_NaiveBayes.md) | Bayes' theorem - probabilistic classification, no training loop | UCI Forensic Glass (214 samples, 6 classes) | 51.16% |
+| 05 | [K-Nearest Neighbors](05_KNN.md) | Euclidean distance - instance-based, no parameters | UCI Forensic Glass (214 samples, 6 classes) | 62.79% |
+| ... | More to come | Neural Networks, SVMs, Decision Trees, and more | - | - |
 
 ---
 
@@ -39,11 +40,12 @@ No scikit-learn. No TensorFlow. No PyTorch. Just NumPy and the math.
 
 ```text
 Foundations/
-├── LinearRegression.md       # Day 01 - Normal Equation, California Housing dataset
-├── LogisticRegression.md     # Day 02 - Sigmoid, gradient descent, Breast Cancer dataset
-├── MultiClassRegression.md   # Day 03 - Softmax, one-hot encoding, Iris dataset
-├── NaiveBayes.md             # Day 04 - Bayes' theorem, UCI Forensic Glass dataset
-└── ...                       # Days 05–30 in progress
+├── 01_LinearRegression.md      # Day 01 - Normal Equation, California Housing dataset
+├── 02_LogisticRegression.md    # Day 02 - Sigmoid, gradient descent, Breast Cancer dataset
+├── 03_MultiClassRegression.md  # Day 03 - Softmax, one-hot encoding, Iris dataset
+├── 04_NaiveBayes.md            # Day 04 - Bayes' theorem, UCI Forensic Glass dataset
+├── 05_KNN.md                   # Day 05 - Euclidean distance, UCI Forensic Glass dataset
+└── ...                         # Days 06-30 in progress
 ```
 
 ---
@@ -52,29 +54,35 @@ Foundations/
 
 **Day 01 - Linear Regression (Normal Equation)**
 ```
-β = (XᵀX)⁻¹ Xᵀy
+b = (XtX)^-1 Xty
 ```
 Closed-form. No iterations. Finds the exact optimal weights in one matrix operation.
 
 **Day 02 - Logistic Regression (Gradient Descent)**
 ```
-σ(z) = 1 / (1 + e⁻ᶻ)
-dw = (1/n) Xᵀ(ŷ − y)
+s(z) = 1 / (1 + e^-z)
+dw = (1/n) Xt(y_hat - y)
 ```
 No closed-form solution exists. Gradient descent iterates to convergence.
 
 **Day 03 - Softmax Regression (Multi-Class)**
 ```
-σ(zᵢ) = eᶻⁱ / Σ eᶻʲ
+s(zi) = e^zi / sum(e^zj)
 ```
 Generalises logistic regression to K classes. Outputs a probability distribution that sums to 1.
 
 **Day 04 - Gaussian Naive Bayes (Probabilistic)**
 ```
-P(y | x) ∝ P(x | y) · P(y)
-log posterior = log(prior) + Σ log P(xᵢ | y)
+P(y | x) ~ P(x | y) * P(y)
+log posterior = log(prior) + sum(log P(xi | y))
 ```
 No gradient descent. Fits a Gaussian per feature per class, predicts via Bayes' theorem.
+
+**Day 05 - K-Nearest Neighbors (Instance-Based)**
+```
+d(x, y) = sqrt(sum((xi - yi)^2))
+```
+No training. Stores the dataset, predicts by majority vote across k nearest neighbors.
 
 ---
 
