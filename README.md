@@ -30,9 +30,10 @@ No scikit-learn. No TensorFlow. No PyTorch. Just NumPy and the math.
 | 01 | [Linear Regression](01_LinearRegression.md) | Normal Equation - closed-form exact solution | California Housing (20,640 samples) | - |
 | 02 | [Logistic Regression](02_LogisticRegression.md) | Sigmoid + gradient descent - binary classification | Breast Cancer Wisconsin (569 samples) | 97.37% |
 | 03 | [Softmax Regression](03_MultiClassRegression.md) | Softmax + one-hot encoding - multi-class classification | Iris (150 samples, 3 classes) | 96.67% |
-| 04 | [Gaussian Naive Bayes](04_NaiveBayes.md) | Bayes' theorem - probabilistic classification, no training loop | UCI Forensic Glass (214 samples, 6 classes) | 51.16% |
+| 04 | [Gaussian Naive Bayes](04_NaiveBayes.md) | Bayes theorem - probabilistic classification, no training loop | UCI Forensic Glass (214 samples, 6 classes) | 51.16% |
 | 05 | [K-Nearest Neighbors](05_KNN.md) | Euclidean distance - instance-based, no parameters | UCI Forensic Glass (214 samples, 6 classes) | 62.79% |
-| ... | More to come | Neural Networks, SVMs, Decision Trees, and more | - | - |
+| 06 | [Decision Tree](06_DecisionTree.md) | Entropy + information gain - recursive binary splitting | UCI Forensic Glass (214 samples, 6 classes) | 67.44% |
+| ... | More to come | Neural Networks, SVMs, Random Forests, and more | - | - |
 
 ---
 
@@ -43,9 +44,10 @@ Foundations/
 ├── 01_LinearRegression.md      # Day 01 - Normal Equation, California Housing dataset
 ├── 02_LogisticRegression.md    # Day 02 - Sigmoid, gradient descent, Breast Cancer dataset
 ├── 03_MultiClassRegression.md  # Day 03 - Softmax, one-hot encoding, Iris dataset
-├── 04_NaiveBayes.md            # Day 04 - Bayes' theorem, UCI Forensic Glass dataset
+├── 04_NaiveBayes.md            # Day 04 - Bayes theorem, UCI Forensic Glass dataset
 ├── 05_KNN.md                   # Day 05 - Euclidean distance, UCI Forensic Glass dataset
-└── ...                         # Days 06-30 in progress
+├── 06_DecisionTree.md          # Day 06 - Entropy, information gain, UCI Forensic Glass dataset
+└── ...                         # Days 07-30 in progress
 ```
 
 ---
@@ -76,13 +78,20 @@ Generalises logistic regression to K classes. Outputs a probability distribution
 P(y | x) ~ P(x | y) * P(y)
 log posterior = log(prior) + sum(log P(xi | y))
 ```
-No gradient descent. Fits a Gaussian per feature per class, predicts via Bayes' theorem.
+No gradient descent. Fits a Gaussian per feature per class, predicts via Bayes theorem.
 
 **Day 05 - K-Nearest Neighbors (Instance-Based)**
 ```
 d(x, y) = sqrt(sum((xi - yi)^2))
 ```
 No training. Stores the dataset, predicts by majority vote across k nearest neighbors.
+
+**Day 06 - Decision Tree (Entropy Engine)**
+```
+IG = H(parent) - sum(w * H(child))
+H(y) = -sum(p * log2(p))
+```
+Recursively splits on the feature and threshold that maximises information gain.
 
 ---
 
